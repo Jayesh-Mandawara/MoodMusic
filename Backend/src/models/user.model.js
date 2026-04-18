@@ -21,6 +21,6 @@ const userSchema = new mongoose.Schema({
 // userSchema.pre("save", function(next) {})
 // userSchema.post("save", function(next) {})
 
-const userModel = mongoose.model("users", userSchema)
+const UserModel = mongoose.model("users", userSchema)
 
-module.exports = userModel
+module.exports = UserModel
