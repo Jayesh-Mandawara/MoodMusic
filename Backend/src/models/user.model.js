@@ -18,6 +18,7 @@ const userSchema = new mongoose.Schema({
     },
 });
 
+// These both are the types of middlewares in mongoose that runs before and after the operation on the schema
 // userSchema.pre("save", function(next) {})
 // userSchema.post("save", function(next) {})
 

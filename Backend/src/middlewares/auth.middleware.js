@@ -13,7 +13,7 @@ async function authUser(req, res, next) {
         return res.status(401).json({
             message: "Invalid token",
         });
-    }
+    };
 
     if (!token) {
         return res.status(401).json({
