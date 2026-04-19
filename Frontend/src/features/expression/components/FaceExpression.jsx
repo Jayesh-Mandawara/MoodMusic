@@ -10,9 +10,14 @@ const FaceExpression = () => {
     const [expression, setExpression] = useState("Press button to detect...");
 
     useEffect(() => {
-
         if (!landmarkerRef.current) {
-            init({ videoRef, landmarkerRef, setIsReady, setExpression, streamRef });
+            init({
+                videoRef,
+                landmarkerRef,
+                setIsReady,
+                setExpression,
+                streamRef,
+            });
         }
 
         return () => {
