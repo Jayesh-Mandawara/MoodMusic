@@ -1,3 +1,4 @@
+// The token blacklisting is done by the help of MongoDb
 const blackListModel = require("../models/blacklist.model");
 const userModel = require("../models/user.model");
 const jwt = require("jsonwebtoken");
