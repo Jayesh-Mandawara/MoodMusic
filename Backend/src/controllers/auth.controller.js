@@ -13,7 +13,7 @@ async function registerUser(req, res) {
 
         if (isAlreadyExists) {
             return res.status(400).json({
-                message: "User already exists with username or email",
+                message: "User already exists with username or email!",
             });
         }
 
@@ -39,7 +39,7 @@ async function registerUser(req, res) {
         res.cookie("token", token);
 
         return res.json({
-            message: "User registered successfully",
+            message: "User registered successfully!",
             user: {
                 id: user._id,
                 username: user.username,
@@ -49,7 +49,7 @@ async function registerUser(req, res) {
     } catch (error) {
         console.log(error);
         res.status(500).json({
-            message: "Internal server error",
+            message: "Internal server error!",
             error: error.message,
         });
     }
@@ -75,7 +75,7 @@ async function loginUser(req, res) {
 
         if (!isPasswordValid) {
             return res.status(400).json({
-                message: "Invalid credentials",
+                message: "Invalid credentials!",
             });
         }
 
@@ -93,7 +93,7 @@ async function loginUser(req, res) {
         res.cookie("token", token);
 
         return res.json({
-            message: "User logged in successfully",
+            message: "User logged in successfully!",
             user: {
                 id: user._id,
                 username: user.username,
@@ -103,7 +103,7 @@ async function loginUser(req, res) {
     } catch (error) {
         console.log(error);
         res.status(500).json({
-            message: "Internal server error",
+            message: "Internal server error!",
             error: error.message,
         });
     }
@@ -119,7 +119,7 @@ async function getMeController(req, res) {
     }
 
     return res.json({
-        message: "User fetched successfully",
+        message: "User fetched successfully!",
         user,
     });
 }
@@ -134,7 +134,7 @@ async function logoutUser(req, res) {
     });
 
     return res.status(200).json({
-        message: "User logged out successfully",
+        message: "User logged out successfully!",
     });
 }
 
