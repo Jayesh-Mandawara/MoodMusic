@@ -26,7 +26,7 @@ body {
     background-color: var(--bg-color);
     color: var(--text-primary);
     font-family: 'Outfit', system-ui, -apple-system, sans-serif;
-    overflow: hidden; /* Prevent unnecessary scrollbars */
+    overflow: hidden;
 }
 
 body {
@@ -44,7 +44,6 @@ body {
     flex-direction: column;
 }
 
-/* Glassmorphism Card */
 .glass-card {
     background: var(--glass-bg);
     backdrop-filter: blur(12px);
@@ -54,7 +53,6 @@ body {
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
-/* Premium Button */
 .btn-primary {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
@@ -89,7 +87,6 @@ body {
     }
 }
 
-/* Typography */
 h1 {
     font-size: 3rem;
     font-weight: 800;
