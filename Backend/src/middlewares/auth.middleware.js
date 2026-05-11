@@ -12,13 +12,13 @@ async function authUser(req, res, next) {
 
     if (isTokenBlacklisted) {
         return res.status(401).json({
-            message: "Invalid token",
+            message: "Invalid token!",
         });
     };
 
     if (!token) {
         return res.status(401).json({
-            message: "Token not provided",
+            message: "Token not provided!",
         });
     }
 
@@ -28,7 +28,7 @@ async function authUser(req, res, next) {
         next();
     } catch (error) {
         res.status(401).json({
-            message: "Invalid token",
+            message: "Invalid token!",
         });
     }
 }
