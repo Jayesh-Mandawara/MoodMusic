@@ -39,40 +39,45 @@ const FaceExpression = () => {
             flexDirection: 'column', 
             alignItems: 'center', 
             justifyContent: 'center',
-            padding: '2rem',
-            gap: '2rem',
-            flex: 1
+            padding: '1.5rem',
+            gap: '1.5rem',
+            flex: 1,
+            overflow: 'hidden'
         }}>
             <header style={{ textAlign: 'center', maxWidth: '600px' }}>
-                <h1>Mood<span className="text-gradient">Music</span></h1>
-                <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem' }}>
-                    Let our AI scan your emotions and curate the perfect soundtrack for your soul.
+                <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)' }}>Mood<span className="text-gradient">Music</span></h1>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '1rem' }}>
+                    Let our AI scan your emotions and curate the perfect soundtrack.
                 </p>
             </header>
 
             <main className="glass-card" style={{ 
-                padding: '1.5rem', 
+                padding: '1.25rem', 
                 position: 'relative',
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
-                gap: '1.5rem'
+                gap: '1rem',
+                width: '100%',
+                maxWidth: '540px'
             }}>
                 <div style={{ 
                     position: 'relative', 
                     borderRadius: '16px', 
                     overflow: 'hidden',
                     boxShadow: '0 0 40px var(--primary-glow)',
-                    border: '1px solid var(--glass-border)'
+                    border: '1px solid var(--glass-border)',
+                    width: '100%',
+                    maxHeight: '40vh'
                 }}>
                     <video
                         ref={videoRef}
                         style={{ 
                             width: "100%", 
-                            maxWidth: "500px", 
                             display: 'block',
                             aspectRatio: '4/3',
-                            objectFit: 'cover'
+                            objectFit: 'cover',
+                            maxHeight: '40vh'
                         }}
                         autoPlay
                         muted
@@ -97,14 +102,14 @@ const FaceExpression = () => {
                 <div style={{ textAlign: 'center' }}>
                     <p style={{ 
                         textTransform: 'uppercase', 
-                        fontSize: '0.75rem', 
+                        fontSize: '0.7rem', 
                         letterSpacing: '0.1em', 
                         color: 'var(--text-secondary)',
-                        marginBottom: '0.5rem'
+                        marginBottom: '0.25rem'
                     }}>
                         Current Mood
                     </p>
-                    <h2 style={{ fontSize: '2rem', fontWeight: '700' }}>
+                    <h2 style={{ fontSize: '1.5rem', fontWeight: '700' }}>
                         {expression}
                     </h2>
                 </div>
