@@ -6,7 +6,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router";
 
 const Login = () => {
-    const { loading, handleLogin } = useAuth();
+    const { loading, handleLogin, error } = useAuth();
     const navigate = useNavigate();
 
     const [email, setEmail] = useState("");
@@ -14,14 +14,19 @@ const Login = () => {
 
     async function handleSubmit(e) {
         e.preventDefault();
-        await handleLogin({ email, password });
-        navigate("/");
+        try {
+            await handleLogin({ email, password });
+            navigate("/");
+        } catch (err) {
+            console.error("Login failed:", err);
+        }
     }
 
     return (
         <main className="login-page">
             <div className="form-container">
                 <h1>Login</h1>
+                {error && <div className="error-message">{error}</div>}
                 <form onSubmit={handleSubmit}>
                     <FormGroup
                         label="Email"
@@ -36,8 +41,8 @@ const Login = () => {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                     />
-                    <button className="button" type="submit">
-                        Login
+                    <button className="button" type="submit" disabled={loading}>
+                        {loading ? "Logging in..." : "Login"}
                     </button>
                 </form>
                 <p>
