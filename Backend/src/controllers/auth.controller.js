@@ -58,12 +58,18 @@ async function registerUser(req, res) {
 async function loginUser(req, res) {
     try {
         const { username, email, password } = req.body;
+        console.log("Login attempt with:", {
+            username,
+            email,
+            password: password ? "***" : "missing",
+        });
 
         const user = await userModel
             .findOne({
                 $or: [{ email }, { username }],
             })
             .select("+password");
+        console.log("User found:", user ? "yes" : "no");
 
         if (!user) {
             return res.status(400).json({
